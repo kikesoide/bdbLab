@@ -31,3 +31,13 @@ const carSchema = new mongoose.Schema({
     extras: [String],
     date: {type: Date, default: Date.now},
 })
+
+
+const Car = mongoose.model('car', carSchema)
+
+getCars()
+
+async function getCars(){
+    const cars = await Car.find()
+    console.log(cars)
+}
