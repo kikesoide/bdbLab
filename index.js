@@ -49,3 +49,10 @@ async function createCar(){
     const result = await car.save()
     console.log(result)
 }
+
+getCars()
+
+async function getCars(){
+    const cars = await Car.find()
+    console.log(cars)
+}
