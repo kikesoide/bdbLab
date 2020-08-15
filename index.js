@@ -28,6 +28,6 @@ const carSchema = new mongoose.Schema({
         max: 2030,
         get: y => Math.round(y)
     },
-    extras: [String]
+    extras: [String],
     date: {type: Date, default: Date.now},
 })
