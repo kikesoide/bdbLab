@@ -31,3 +31,21 @@ const carSchema = new mongoose.Schema({
     extras: [String],
     date: {type: Date, default: Date.now},
 })
+
+const Car = mongoose.model('car', carSchema)
+
+createCar()
+
+async function createCar(){
+    const car = new Car({
+        company: 'BMW',
+        model: 'S1',
+        price: 6000,
+        year: 2020,
+        sold: false,
+        extras: ['laser light']
+    })
+
+    const result = await car.save()
+    console.log(result)
+}
